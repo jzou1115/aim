@@ -72,7 +72,6 @@ public class MapASE {
 	
 		genosampleIDs.retainAll(expsampleIDs);
 		numSamples = genosampleIDs.size();
-		
 		//get subset of genotype and ASE data that have matching samples
 		GenoMatrix genomat = new GenoMatrix(snps, genosampleIDs);
 		ExpMatrix expmat = new ExpMatrix(gene.getExpsamples(), genosampleIDs);
@@ -100,10 +99,10 @@ public class MapASE {
 		pointwise = new double[numSNPs]; //array to store pointwise p-values
 		String[] line = pointwisePValue(); //populate pointwise array and return array of output for each snp
 		
-		double[] permPValues = new double[perm]; //list of minimum p-value for each permutation
-		for(int p=1; p<=perm; p++){
-			permPValues[p-1]= permutationPValue();
-		}
+//		double[] permPValues = new double[perm]; //list of minimum p-value for each permutation
+//		for(int p=1; p<=perm; p++){
+//			permPValues[p-1]= permutationPValue();
+//		}
 
 		//double[] permutationPValue = calcPValues(permPValues);
 		
