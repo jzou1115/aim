@@ -29,7 +29,7 @@ mkdir $ASE_SCORE_DIR
 fi
 
 if [ -f $ASE ] && [ -f $GENOTYPES ] && [ -f $EQTL_SCORE ] ; then
-java -jar ~/Documents/aim/ase.jar mapase -m $EQTL_SCORE -a $GENOTYPES -b $ASE -t $ASE_GENE -p 1 -o $ASE_SCORE_DIR
+java -jar ~/Documents/aim/ase.jar mapase -m $EQTL_SCORE -a $GENOTYPES -b $ASE -t $ASE_GENE -o $ASE_SCORE_DIR
 fi
 ASE_SCORE=${ASE_SCORE_DIR}/${ASE_GENE}_mapase 
 

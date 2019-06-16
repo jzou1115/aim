@@ -44,3 +44,6 @@ ASE input file columns:
 Output File Format:
 This program will output a single file containing the allelic imbalance summary statistics for the specified cis-SNPs. There is no header to this file, and each SNP is in one line. The first column is the SNP id, and the second column is the summary statistic.  
 
+
+Sample pipeline and data:
+Sample data is located in the sample_pipeline/data folder.  A sample pipeline is sample_pipeline/sample_pipeline.sh.
