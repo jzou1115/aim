@@ -47,3 +47,14 @@ This program will output a single file containing the allelic imbalance summary 
 
 Sample pipeline and data:
 Sample data is located in the sample_pipeline/data folder.  A sample pipeline is sample_pipeline/sample_pipeline.sh.
+
+Sample simulation code:
+Sample code to generate statistics for the simulations is located in sample_pipeline/simulateScores.R.  The usage and input is detailed below.
+
+Rscript simulateScores.R <SNPS> <LD> <HET> <NUM_CAUSAL> <LAMBDA> <GENE>
+SNPS	A file with the cis-SNP to perform allelic imbalance association on in the first column
+LD	An LD matrix
+HET	A pairwise heterozygosity matrix
+NUM_CAUSAL	Number of causal variants to simulate
+LAMBDA	effect size of causal variants
+GENE	Gene name for output file
