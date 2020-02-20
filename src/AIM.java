@@ -20,7 +20,7 @@ import parse.ParseMap;
 import parse.ParseSNP;
 
 
-public class ASE {
+public class AIM {
 	
 	private void assignChromatin(File states, InputStream genesmap, InputStream variants, int p, String gene, InputStream stateIDs, File outdir, String filename) throws IOException{
 
@@ -115,7 +115,7 @@ public class ASE {
 			System.exit(0);
 		}
 		
-		ASE a= new ASE();
+		AIM a= new AIM();
 		String fcn = cmdArgs.getFunction();
 		
 		if(fcn.equals("genestosnps")){

@@ -34,35 +34,24 @@ public class ParseExpressions {
 			while((line = br.readLine()) != null){
 				try{
 					String[] tokens = line.split("\t");
-					String gtexid = tokens[6].trim();
+					String gtexid = tokens[0].trim();
 					
-					int refAllele = Integer.parseInt(tokens[8]);
-					int altAllele = Integer.parseInt(tokens[9]);
-					int totalReads = Integer.parseInt(tokens[10]);
-					boolean isLeft = isLeft(tokens[18]);
-					//boolean isLeft=true;
-					
-					if(totalReads>=20){
-						ret.add(gtexid);
-						//initialize individual to have 0 reference reads and 0 total reads
-						if(!reads.containsKey(gtexid)){
-							reads.put(gtexid, 0);
-							ref.put(gtexid, 0);
-						}
-						
-						//Update read count
-						if(isLeft){
-							int refKey = ref.get(gtexid) + altAllele;
-							ref.put(gtexid, refKey);
-						}
-						else{
-							int refKey = ref.get(gtexid) + refAllele;
-							ref.put(gtexid, refKey);
-						}
-						
-						int readsKey = reads.get(gtexid) + totalReads;
-						reads.put(gtexid, readsKey);	
+					int h1 = Integer.parseInt(tokens[1]);
+					int h2 = Integer.parseInt(tokens[2]);
+					int totalReads = h1 + h2;
+				
+					ret.add(gtexid);	
+					if(!reads.containsKey(gtexid)){
+						reads.put(gtexid, 0);
+						ref.put(gtexid, 0);
 					}
+
+					int refKey = ref.get(gtexid) + h1;
+					ref.put(gtexid, refKey);	
+					
+					int readsKey = reads.get(gtexid) + totalReads;
+					reads.put(gtexid, readsKey);	
+					
 
 				} catch (Exception e){
 					e.printStackTrace();
